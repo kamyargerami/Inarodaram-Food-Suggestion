@@ -55,8 +55,7 @@ class GetLinkTest extends DuskTestCase
     {
         foreach ($this->categories as $category) {
             for ($current_page = 1; $current_page <= $category['last_page']; $current_page++) {
-//                $this->browser->visit($category['link'] . 'page/' . $current_page);
-                $this->browser->visit('http://chibepazam.ir/?s=%DA%A9%D8%A8%D8%A7%D8%A8+%D8%AD%D9%84%D8%B2%D9%88%D9%86%DB%8C');
+                $this->browser->visit($category['link'] . 'page/' . $current_page);
 
                 $titles = $this->browser->elements('.search-text > a');
                 foreach ($titles as $title) {
