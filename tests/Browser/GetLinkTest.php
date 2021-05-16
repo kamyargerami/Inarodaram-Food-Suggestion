@@ -56,27 +56,18 @@ class GetLinkTest extends DuskTestCase
         foreach ($this->categories as $category) {
             for ($current_page = 1; $current_page <= $category['last_page']; $current_page++) {
                 $this->browser->visit($category['link'] . 'page/' . $current_page);
-
-                $titles = $this->browser->elements('.search-text > a');
-                foreach ($titles as $title) {
-                    $this->foods[] = [
-                        'title' => $title->getAttribute('title'),
-                        'link' => $title->getAttribute('href')
-                    ];
-                }
-
-                $requirements = $this->browser->elements('.search-text > p > strong');
-                foreach ($requirements as $index => $requirement) {
-                    $requirement_text = explode(' ، ', str_replace('مواد مورد نياز: ', '', $requirement->getText()));
-                    $this->foods[$index]['requirements'] = $requirement_text;
-                }
-
-                $other_texts = $this->browser->elements('.search-text > p:nth-child(3)');
-                foreach ($other_texts as $index => $other_text) {
-                    $there_line = explode('<br>', trim($other_text->getAttribute('innerHTML')));
-
-                    $this->foods[$index]['categories'] = explode(' ، ', str_replace('نوع غذا: ', '', trim(preg_replace('/\t+/', '', strip_tags(str_replace('&nbsp;', '', $there_line[0]))))));
-                    $this->foods[$index]['vade'] = explode(' و ', str_replace('مي توني اينو واسه ', '', str_replace(' درست کني!', '', trim(preg_replace('/\t+/', '', strip_tags(str_replace('&nbsp;', '', $there_line[1])))))));
+                for ($i = 3; $i <= 21; $i += 2) {
+                    if ($this->browser->element('#ajax-content > div:nth-of-type(' . $i . ') > .search-text')) {
+                        $this->browser->with('#ajax-content > div:nth-of-type(' . $i . ') > .search-text', function ($element) {
+                            $this->foods[] = [
+                                'title' => trim($element->element('a')->getAttribute('title')),
+                                'categories' => explode(' ، ', trim(str_replace('نوع غذا: ', '', explode(PHP_EOL, $element->element('p:nth-of-type(2)')->getText())[0]))),
+                                'meal' => explode(' و ', trim(str_replace(' درست کني!', '', str_replace('مي توني اينو واسه ', '', explode(PHP_EOL, $element->element('p:nth-of-type(2)')->getText())[1])))),
+                                'requirements' => explode(' ، ', trim(str_replace('مواد مورد نياز: ', '', $element->element('p strong')->getText()))),
+                                'link' => trim($element->element('a')->getAttribute('href'))
+                            ];
+                        });
+                    }
                 }
             }
         }
