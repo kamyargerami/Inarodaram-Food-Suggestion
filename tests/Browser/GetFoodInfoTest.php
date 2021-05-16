@@ -2,6 +2,7 @@
 
 namespace Tests\Browser;
 
+use App\Models\Food;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
@@ -24,8 +25,8 @@ class GetFoodInfoTest extends DuskTestCase
 
         foreach ($foods as $index => $food) {
             $this->browser->visit($food['link']);
-            $foods[$index]['items_needed'] = explode(PHP_EOL, trim($this->browser->text('ul.recipe-ingredient')));
-            $foods[$index]['recipe'] = explode(PHP_EOL, trim($this->browser->text('ol.recipe-ingredient')));
+            $foods[$index]['items_needed'] = trim($this->browser->text('ul.recipe-ingredient'));
+            $foods[$index]['recipe'] = trim($this->browser->text('ol.recipe-ingredient'));
             $foods[$index]['details'] = $this->browser->text('#page div p') != 'مطالب پیشنهادی از سراسر وب' ? trim($this->browser->text('#page div p')) : null;
 
             $tags_elements = $this->browser->elements('.tag-span > *');
@@ -36,10 +37,22 @@ class GetFoodInfoTest extends DuskTestCase
             }
 
             $foods[$index]['image'] = $this->browser->attribute('.recipe-image', 'src');
-        }
 
-        $export_file = fopen("final.json", "w") or die("Unable to open file!");
-        fwrite($export_file, json_encode($foods));
-        fclose($export_file);
+            Food::firstOrCreate([
+                'name' => $foods[$index]['title'],
+            ], [
+                'categories' => $foods[$index]['categories'] ?? null,
+                'meals' => $foods[$index]['meal'] ?? null,
+                'requirements' => $foods[$index]['requirements'] ?? null,
+                'link' => $foods[$index]['link'] ?? null,
+                'items_needed' => $foods[$index]['items_needed'] ?? null,
+                'recipe' => $foods[$index]['recipe'] ?? null,
+                'details' => $foods[$index]['details'] ?? null,
+                'tags' => $foods[$index]['tags'] ?? null,
+                'images' => [
+                    $foods[$index]['image']
+                ],
+            ]);
+        }
     }
 }
