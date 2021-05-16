@@ -57,6 +57,7 @@
                                     <h4 class="font-weight-bolder">{{$food->name}}</h4>
                                 </a>
                                 <div>
+                                    دسته بندی:
                                     @foreach($food->categories as $index => $category)
                                         <span>{{$category}}</span>
                                         @if($index < count($food->categories) - 1)
@@ -66,6 +67,7 @@
                                 </div>
 
                                 <div>
+                                    مناسب برای وعده:
                                     @foreach($food->meals as $index => $meal)
                                         <span>{{$meal}}</span>
                                         @if($index < count($food->meals) - 1)
@@ -75,6 +77,7 @@
                                 </div>
 
                                 <div>
+                                    مواد مورد نیاز:
                                     @foreach($food->requirements as $index => $requirement)
                                         <span>{{$requirement}}</span>
                                         @if($index < count($food->requirements) - 1)

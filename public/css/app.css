@@ -19,6 +19,13 @@ body {
     background-color: #940000;
 }
 
+.food-image-large {
+    min-height: 300px;
+    background-position-y: center;
+    background-size: cover;
+    background-color: #940000;
+}
+
 .bg-main {
     background-color: #940000;
 }
