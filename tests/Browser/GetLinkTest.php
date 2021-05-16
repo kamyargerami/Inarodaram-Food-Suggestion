@@ -28,7 +28,7 @@ class GetLinkTest extends DuskTestCase
 
     public function getCategories()
     {
-        return Cache::rememberForever('categories', function () {
+        return Cache::rememberForever('chibepazam_categories', function () {
             $this->browser->visit('http://chibepazam.ir/category/rice/');
 
             $categories = $this->browser->elements('.side-category-list a');

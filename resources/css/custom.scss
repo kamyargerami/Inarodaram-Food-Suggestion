@@ -1,0 +1,21 @@
+body {
+    direction: rtl;
+    text-align: right;
+    background-color: #fafafa;
+}
+
+.food-image-small {
+    min-height: 150px;
+    background-position-y: center;
+    background-size: cover;
+    background-color: #940000;
+}
+
+.bg-main {
+    background-color: #940000;
+}
+
+textarea.select2-search__field {
+    height: 25px !important;
+    text-align: right;
+}
