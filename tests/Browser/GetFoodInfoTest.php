@@ -23,8 +23,6 @@ class GetFoodInfoTest extends DuskTestCase
         });
 
         foreach ($foods as $index => $food) {
-            if ($index == 0) continue;
-
             $this->browser->visit($food['link']);
             $foods[$index]['items_needed'] = explode(PHP_EOL, trim($this->browser->text('ul.recipe-ingredient')));
             $foods[$index]['recipe'] = explode(PHP_EOL, trim($this->browser->text('ol.recipe-ingredient')));
@@ -38,8 +36,6 @@ class GetFoodInfoTest extends DuskTestCase
             }
 
             $foods[$index]['image'] = $this->browser->attribute('.recipe-image', 'src');
-
-            dd($foods[$index]);
         }
 
         $export_file = fopen("final.json", "w") or die("Unable to open file!");
