@@ -38,4 +38,9 @@ class FoodsController extends Controller
         $foods = Food::inRandomOrder('id')->paginate(20);
         return view('home', compact('foods', 'requirements', 'categories'));
     }
+
+    public function view(Food $food)
+    {
+        return view('food', compact('food'));
+    }
 }

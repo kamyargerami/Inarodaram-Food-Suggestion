@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'FoodsController@index')->name('home');
+Route::get('view/{food}', 'FoodsController@view')->name('view');
