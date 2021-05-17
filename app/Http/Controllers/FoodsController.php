@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Food;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 
 class FoodsController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $requirements = Cache::rememberForever('requirements', function () {
             $all = Food::select('requirements')->pluck('requirements');
@@ -35,7 +36,16 @@ class FoodsController extends Controller
             return array_unique($categories);
         });
 
-        $foods = Food::inRandomOrder('id')->paginate(20);
+
+        $foods = Food::where(function ($query) use ($request) {
+            if ($request->requirements) {
+                foreach ($request->requirements as $requirement) {
+                    $query->whereJsonContains('requirements', $requirement);
+                }
+            }
+        })->inRandomOrder('id')->paginate(20);
+
+//        dd($foods);
         return view('home', compact('foods', 'requirements', 'categories'));
     }
 
