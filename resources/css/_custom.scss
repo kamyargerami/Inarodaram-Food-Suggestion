@@ -1,5 +1,6 @@
 $font-family-fa-num: 'IRANSansFaNum', Arial;
 $font-family: 'IRANSans', Arial;
+$main-color: #940000;
 
 body {
     font-family: $font-family-fa-num;
@@ -29,22 +30,31 @@ input {
     min-height: 150px;
     background-position-y: center;
     background-size: cover;
-    background-color: #940000;
+    background-color: $main-color;
 }
 
 .food-image-large {
     min-height: 300px;
     background-position-y: center;
     background-size: cover;
-    background-color: #940000;
+    background-color: $main-color;
 }
 
 .bg-main {
-    background-color: #940000;
+    background-color: $main-color;
 }
 
 .bg-nav {
     background-color: #691000;
+}
+
+.page-link {
+    color: $main-color;
+}
+
+.page-item.active .page-link {
+    background-color: $main-color;
+    border-color: $main-color;
 }
 
 textarea.select2-search__field {

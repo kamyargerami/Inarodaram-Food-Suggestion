@@ -80,4 +80,8 @@
             @endforeach
         </div>
     </div>
+
+    <div class="d-flex justify-content-center">
+        {{$foods->links()}}
+    </div>
 @endsection
