@@ -24,19 +24,6 @@ class FoodsController extends Controller
             return array_unique($requirements);
         });
 
-        $categories = Cache::rememberForever('categories', function () {
-            $all = Food::select('categories')->pluck('categories');
-            $categories = [];
-            foreach ($all as $food) {
-                foreach ($food as $category) {
-                    $categories[] = $category;
-                }
-            }
-
-            return array_unique($categories);
-        });
-
-
         $foods = Food::where(function ($query) use ($request) {
             if ($request->requirements) {
                 foreach ($request->requirements as $requirement) {
@@ -45,8 +32,7 @@ class FoodsController extends Controller
             }
         })->inRandomOrder('id')->paginate(20);
 
-//        dd($foods);
-        return view('home', compact('foods', 'requirements', 'categories'));
+        return view('home', compact('foods', 'requirements'));
     }
 
     public function view(Food $food)
