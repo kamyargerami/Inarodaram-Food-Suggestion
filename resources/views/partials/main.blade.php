@@ -9,7 +9,7 @@
     <meta name="description" content="@yield('description')">
     <meta name="keywords" content="@yield('keywords')">
     <meta name="author" content="Kamyar Gerami">
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="{{mix('/css/app.css')}}">
     <link rel="icon" href="{{asset('images/favicon.png')}}" type="image/png">
     <link rel="apple-touch-icon" href="{{asset('images/favicon.png')}}">
     <meta name="theme-color" content="#940000">
@@ -36,7 +36,7 @@
 
 @yield('content')
 
-<script src="{{asset('js/app.js')}}"></script>
+<script src="{{mix('/js/app.js')}}"></script>
 @yield('script')
 <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5C53TQH"
