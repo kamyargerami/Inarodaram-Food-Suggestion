@@ -29,11 +29,7 @@
 
 @section('content')
     <div class="container">
-        @include('search-box')
+    @include('search-box')
 
-        @include('food-list')
-
-        <div class="d-flex justify-content-center">
-            {{$foods->links()}}
-        </div>
+    @include('food-list')
 @endsection
