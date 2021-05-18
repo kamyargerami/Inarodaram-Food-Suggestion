@@ -35,7 +35,21 @@ class FoodsController extends Controller
             }
         })->inRandomOrder()->paginate(20)->onEachSide(0);
 
-        return view('home', compact('foods'));
+        $similar_foods = [];
+        if (!$foods->total()) {
+            $similar_foods = Food::where(function ($query) use ($request) {
+                if ($request->name) {
+                    $query->where('name', 'like', "%$request->name%");
+                } elseif ($request->requirements) {
+                    foreach ($request->requirements as $index => $requirement) {
+                        if ($index > 5) continue;
+                        $query->orwhereJsonContains('requirements', $requirement);
+                    }
+                }
+            })->inRandomOrder()->paginate(20)->onEachSide(0);
+        }
+
+        return view('home', compact('foods', 'similar_foods'));
     }
 
     public function view(Food $food)
@@ -43,7 +57,7 @@ class FoodsController extends Controller
         $related = Food::where(function ($query) use ($food) {
             if ($food->categories) {
                 foreach ($food->categories as $category) {
-                    $query->whereJsonContains('categories', $category);
+                    $query->orwhereJsonContains('categories', $category);
                 }
             }
         })->inRandomOrder('id')->take(4)->get();

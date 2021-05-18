@@ -31,7 +31,20 @@
     <div class="container">
         @include('search-box')
 
-        @include('food-list')
+        @if($similar_foods)
+            <div class="col-12 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="text-center text-danger fw-bold">موردی که شامل همه مواد غذایی شما باشد موجود
+                            نیست</h4>
+                        <h6 class="text-center">موارد زیر حداقل یکی از مواد عذایی شما را شامل می شود</h6>
+                    </div>
+                </div>
+            </div>
+            @include('food-list',['foods'=>$similar_foods])
+        @else
+            @include('food-list')
+        @endif
 
         <div class="d-flex justify-content-center">
             {{$foods->withQueryString()->links()}}
