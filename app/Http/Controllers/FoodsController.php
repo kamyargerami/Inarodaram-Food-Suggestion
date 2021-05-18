@@ -12,7 +12,7 @@ class FoodsController extends Controller
 {
     public function index(Request $request)
     {
-        $requirements = Cache::rememberForever('requirements', function () {
+        Cache::rememberForever('requirements', function () {
             $all = Food::select('requirements')->pluck('requirements');
             $requirements = [];
             foreach ($all as $food) {
@@ -32,11 +32,29 @@ class FoodsController extends Controller
             }
         })->inRandomOrder('id')->paginate(20);
 
-        return view('home', compact('foods', 'requirements'));
+        return view('home', compact('foods'));
     }
 
     public function view(Food $food)
     {
         return view('food', compact('food'));
+    }
+
+    public function category($category)
+    {
+        $foods = Food::where(function ($query) use ($category) {
+            $query->whereJsonContains('categories', $category);
+        })->inRandomOrder('id')->paginate(20);
+
+        return view('home', compact('foods'));
+    }
+
+    public function meal($meal)
+    {
+        $foods = Food::where(function ($query) use ($meal) {
+            $query->whereJsonContains('meals', $meal);
+        })->inRandomOrder('id')->paginate(20);
+
+        return view('home', compact('foods'));
     }
 }

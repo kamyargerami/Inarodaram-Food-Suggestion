@@ -1,6 +1,10 @@
 @extends('partials.main')
 
-@section('title',$food->name)
+@section('title','دستور پخت و موارد مورد نیاز ' . $food->name)
+
+@section('description')آموزش و دستور پخت{{$food->name}}به همراه موارد مورد نیاز به صورت کامل و دقیق@endsection
+
+@section('keywords',$food->name . ', دستور پخت, مواد مورد نیاز')
 
 @section('content')
     <div class="container justify-content-center d-flex">
@@ -14,7 +18,7 @@
 
                         <h1 class="fw-bold text-center text-danger mb-3">{{$food->name}}</h1>
                         <div class="text-center">
-                            <span class="fw-500">
+                            <span class="fw-bold">
                                 دسته بندی:
                             </span>
                             @foreach($food->categories as $index => $category)
@@ -26,7 +30,7 @@
                         </div>
 
                         <div class="mb-3 text-center">
-                            <span class="fw-500">
+                            <span class="fw-bold">
                                 مناسب برای وعده:
                             </span>
                             @foreach($food->meals as $index => $meal)
@@ -60,7 +64,7 @@
 
                         <hr>
 
-                        <h3 class="text-center text-danger fw-bold mb-3">راهنمای پخت</h3>
+                        <h3 class="text-center text-danger fw-bold mb-3">دستور پخت</h3>
                         <p>{!! nl2br($food->recipe) !!}</p>
                         <p>{!! nl2br($food->details) !!}</p>
                     </div>

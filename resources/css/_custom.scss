@@ -1,8 +1,29 @@
+$font-family-fa-num: 'IRANSansFaNum', Arial;
+$font-family: 'IRANSans', Arial;
+
 body {
+    font-family: $font-family-fa-num;
     direction: rtl;
     text-align: right;
     background-color: #fafafa;
 }
+
+input {
+    font-family: $font-family;
+}
+
+.fa-num {
+    font-family: $font-family-fa-num !important;
+}
+
+.en-num {
+    font-family: $font-family !important;
+}
+
+.tooltip {
+    font-family: $font-family;
+}
+
 
 .food-image-small {
     min-height: 150px;
@@ -26,10 +47,6 @@ body {
     background-color: #691000;
 }
 
-.fw-500 {
-    font-weight: 500;
-}
-
 textarea.select2-search__field {
     height: 25px !important;
     text-align: right;
@@ -37,4 +54,17 @@ textarea.select2-search__field {
 
 p {
     font-size: 1.1rem;
+}
+
+.select2-container .select2-search--inline .select2-search__field {
+    font-family: $font-family-fa-num !important;
+    padding-right: 10px;
+}
+
+.dropdown-menu {
+    text-align: right;
+}
+
+.logo {
+    height: 28px;
 }
