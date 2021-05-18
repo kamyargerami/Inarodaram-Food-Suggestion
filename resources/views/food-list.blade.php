@@ -71,7 +71,3 @@
         </div>
     @endforeach
 </div>
-
-<div class="d-flex justify-content-center">
-    {{$foods->withQueryString()->links()}}
-</div>
