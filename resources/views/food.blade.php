@@ -62,12 +62,20 @@
                         @endif
 
                         <h3 class="text-center text-danger fw-bold mb-3">موارد مورد نیاز</h3>
-                        <p>{!! nl2br($food->items_needed) !!}</p>
+                        <ul class="pe-5">
+                            @foreach(explode(PHP_EOL,$food->items_needed) as $item_needed)
+                                <li>{{$item_needed}}</li>
+                            @endforeach
+                        </ul>
 
                         <hr>
 
                         <h3 class="text-center text-danger fw-bold mb-3">دستور پخت</h3>
-                        <p>{!! nl2br($food->recipe) !!}</p>
+                        <ul class="pe-5">
+                            @foreach(explode(PHP_EOL,$food->recipe) as $recipe)
+                                <li class="mb-2">{{$recipe}}</li>
+                            @endforeach
+                        </ul>
                         <p>{!! nl2br($food->details) !!}</p>
                     </div>
                 </div>
