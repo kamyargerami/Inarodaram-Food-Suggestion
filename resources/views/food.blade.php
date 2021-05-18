@@ -22,7 +22,8 @@
                                 دسته بندی:
                             </span>
                             @foreach($food->categories as $index => $category)
-                                <span>{{$category}}</span>
+                                <a href="{{route('category',$category)}}"
+                                   class="text-decoration-none text-body">{{$category}}</a>
                                 @if($index < count($food->categories) - 1)
                                     ,
                                 @endif
@@ -31,10 +32,11 @@
 
                         <div class="mb-3 text-center">
                             <span class="fw-bold">
-                                مناسب برای وعده:
+                                مناسب برای:
                             </span>
                             @foreach($food->meals as $index => $meal)
-                                <span>{{$meal}}</span>
+                                <a href="{{route('meal',$meal)}}"
+                                   class="text-decoration-none text-body">{{$meal}}</a>
                                 @if($index < count($food->meals) - 1)
                                     ,
                                 @endif

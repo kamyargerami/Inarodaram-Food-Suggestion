@@ -47,7 +47,7 @@
                             <div class="mt-1">
                                 <span class="text-danger fw-bold">مناسب برای وعده:</span>
                                 @foreach($food->meals as $index => $meal)
-                                    <a href="{{route('category',$meal)}}"
+                                    <a href="{{route('meal',$meal)}}"
                                        class="text-decoration-none text-body">{{$meal}}</a>
                                     @if($index < count($food->meals) - 1)
                                         ,
