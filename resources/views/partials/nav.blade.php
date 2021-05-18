@@ -19,24 +19,24 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">پلو</a></li>
-                        <li><a class="dropdown-item" href="#">غذای ملل</a></li>
-                        <li><a class="dropdown-item" href="#">غذای سنتی</a></li>
-                        <li><a class="dropdown-item" href="#">غذای محلی</a></li>
-                        <li><a class="dropdown-item" href="#">غذای ارسالی کاربران</a></li>
-                        <li><a class="dropdown-item" href="#">غذای دریایی</a></li>
-                        <li><a class="dropdown-item" href="#">غذای کودک</a></li>
                         <li><a class="dropdown-item" href="#">کباب</a></li>
-                        <li><a class="dropdown-item" href="#">خوراک</a></li>
-                        <li><a class="dropdown-item" href="#">خورشت</a></li>
-                        <li><a class="dropdown-item" href="#">کوکو و شامی</a></li>
-                        <li><a class="dropdown-item" href="#">املت</a></li>
-                        <li><a class="dropdown-item" href="#">پیش غذا</a></li>
                         <li><a class="dropdown-item" href="#">پیتزا و ساندویچ</a></li>
-                        <li><a class="dropdown-item" href="#">دیگر</a></li>
+                        <li><a class="dropdown-item" href="#">خورشت</a></li>
+                        <li><a class="dropdown-item" href="#">خوراک</a></li>
+                        <li><a class="dropdown-item" href="#">کوکو و شامی</a></li>
+                        <li><a class="dropdown-item" href="#">غذای دریایی</a></li>
                         <li><a class="dropdown-item" href="#">پاستا و ماکارونی</a></li>
                         <li><a class="dropdown-item" href="#">سوپ آش آبگوشت</a></li>
+                        <li><a class="dropdown-item" href="#">غذای ملل</a></li>
+                        <li><a class="dropdown-item" href="#">غذای محلی</a></li>
+                        <li><a class="dropdown-item" href="#">غذای سنتی</a></li>
+                        <li><a class="dropdown-item" href="#">غذای کودک</a></li>
+                        <li><a class="dropdown-item" href="#">املت</a></li>
+                        <li><a class="dropdown-item" href="#">پیش غذا</a></li>
                         <li><a class="dropdown-item" href="#">نان</a></li>
                         <li><a class="dropdown-item" href="#">کیک و شیرینی</a></li>
+                        <li><a class="dropdown-item" href="#">غذای ارسالی کاربران</a></li>
+                        <li><a class="dropdown-item" href="#">دیگر</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
