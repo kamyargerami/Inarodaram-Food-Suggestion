@@ -54,7 +54,7 @@ class FoodsController extends Controller
     {
         $foods = Food::where(function ($query) use ($category) {
             $query->whereJsonContains('categories', $category);
-        })->inRandomOrder('id')->paginate(20);
+        })->inRandomOrder('id')->paginate(20)->onEachSide(0);
 
         return view('home', compact('foods'));
     }
@@ -63,7 +63,7 @@ class FoodsController extends Controller
     {
         $foods = Food::where(function ($query) use ($meal) {
             $query->whereJsonContains('meals', $meal);
-        })->inRandomOrder('id')->paginate(20);
+        })->inRandomOrder('id')->paginate(20)->onEachSide(0);
 
         return view('home', compact('foods'));
     }
