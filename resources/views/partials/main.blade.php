@@ -9,8 +9,11 @@
     <meta name="description" content="@yield('description')">
     <meta name="keywords" content="@yield('keywords')">
     <meta name="author" content="Kamyar Gerami">
-    <link rel="icon" href="{{asset('images/favicon.png')}}" type="image/png">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link rel="icon" href="{{asset('images/favicon.png')}}" type="image/png">
+    <link rel="apple-touch-icon" href="{{asset('images/favicon.png')}}">
+    <meta name="theme-color" content="#940000">
+    <link rel="manifest" href="/manifest.json">
     @yield('style')
 
     <script>(function (w, d, s, l, i) {
