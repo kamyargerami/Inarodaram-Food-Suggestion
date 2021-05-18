@@ -26,7 +26,8 @@ class FoodsController extends Controller
 
         $foods = Food::where(function ($query) use ($request) {
             if ($request->requirements) {
-                foreach ($request->requirements as $requirement) {
+                foreach ($request->requirements as $index => $requirement) {
+                    if ($index > 5) continue;
                     $query->whereJsonContains('requirements', $requirement);
                 }
             }
