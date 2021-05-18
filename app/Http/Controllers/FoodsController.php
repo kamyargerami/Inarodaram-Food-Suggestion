@@ -36,7 +36,7 @@ class FoodsController extends Controller
         })->inRandomOrder()->paginate(20)->onEachSide(0);
 
         $similar_foods = [];
-        if ($foods->total() < 4) {
+        if ($foods->total() < 7) {
             $similar_foods = Food::where(function ($query) use ($request) {
                 if ($request->name) {
                     $query->where('name', 'like', "%$request->name%");
