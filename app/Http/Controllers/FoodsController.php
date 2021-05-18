@@ -38,7 +38,14 @@ class FoodsController extends Controller
 
     public function view(Food $food)
     {
-        return view('food', compact('food'));
+        $related = Food::where(function ($query) use ($food) {
+            if ($food->categories) {
+                foreach ($food->categories as $category) {
+                    $query->whereJsonContains('categories', $category);
+                }
+            }
+        })->inRandomOrder('id')->take(4)->get();
+        return view('food', compact('food', 'related'));
     }
 
     public function category($category)

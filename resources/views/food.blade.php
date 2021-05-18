@@ -72,4 +72,8 @@
             </div>
         </div>
     </div>
+    <div class="container mt-4">
+        <h2 class="text-center text-danger fw-bold mb-4">موارد مشابه</h2>
+        @include('food-list',['foods' => $related])
+    </div>
 @endsection
