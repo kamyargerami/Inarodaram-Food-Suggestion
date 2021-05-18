@@ -8,6 +8,11 @@
     @else
         با این وسایل چی بپزم؟ - وب سایت اینارو دارم
     @endif
+
+    @if(request('page') and request('page') > 1)
+        -
+        صفحه {{request('page')}}
+    @endif
 @endsection
 
 @section('description')

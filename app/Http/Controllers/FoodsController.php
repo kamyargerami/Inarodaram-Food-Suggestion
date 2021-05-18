@@ -31,7 +31,7 @@ class FoodsController extends Controller
                     $query->whereJsonContains('requirements', $requirement);
                 }
             }
-        })->inRandomOrder('id')->paginate(20)->onEachSide(0);
+        })->inRandomOrder()->paginate(20)->onEachSide(0);
 
         return view('home', compact('foods'));
     }
