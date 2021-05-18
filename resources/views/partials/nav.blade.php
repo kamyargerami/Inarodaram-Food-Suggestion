@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-nav">
     <div class="container">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand fw-bold" href="#">اینو دارم ، چی بپزم؟</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
                 aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
