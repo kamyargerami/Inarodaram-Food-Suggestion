@@ -25,7 +25,9 @@ class FoodsController extends Controller
         });
 
         $foods = Food::where(function ($query) use ($request) {
-            if ($request->requirements) {
+            if ($request->name) {
+                $query->where('name', 'like', "%$request->name%");
+            } elseif ($request->requirements) {
                 foreach ($request->requirements as $index => $requirement) {
                     if ($index > 5) continue;
                     $query->whereJsonContains('requirements', $requirement);
