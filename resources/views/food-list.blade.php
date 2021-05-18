@@ -1,23 +1,4 @@
 <div class="row">
-    @if(!count($foods))
-        <div class="col-12">
-            <div class="card">
-                <div class="card-body">
-                    @if(request('requirements'))
-                        <h4 class="text-danger text-center">ترکیب مورد نظر شما یافت نشد</h4>
-                        <p class="text-center">
-                            شما میتوانید با تغییر یا حذف موارد موجود خودتون به غذا های دیگه ای دسترسی داشته باشین
-                        </p>
-                    @elseif(request('name'))
-                        <h4 class="text-danger text-center">کلمه مورد نظر شما یافت نشد</h4>
-                        <p class="text-center">
-                            شما میتوانید با تغییر نام غذا به آیتم های دیگر دسترسی داشته باشید
-                        </p>
-                    @endif
-                </div>
-            </div>
-        </div>
-    @endif
     @foreach($foods as $food)
         <div class="col-lg-6">
             <div class="card mb-4">
