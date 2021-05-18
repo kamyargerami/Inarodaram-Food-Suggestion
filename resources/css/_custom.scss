@@ -34,7 +34,7 @@ input {
 }
 
 .food-image-large {
-    min-height: 300px;
+    min-height: 200px;
     background-position-y: center;
     background-size: cover;
     background-color: $main-color;
@@ -77,4 +77,42 @@ p {
 
 .logo {
     height: 28px;
+}
+
+.pagination {
+    padding-right: 0;
+}
+
+@media (min-width: 200px) {
+    #search-title {
+        font-size: 14px;
+    }
+
+    #food-title {
+        font-size: 20px
+    }
+}
+
+@media (min-width: 400px) {
+    #search-title {
+        font-size: 18px;
+    }
+
+    #food-title {
+        font-size: 25px
+    }
+}
+
+@media (min-width: 500px) {
+    #search-title {
+        font-size: 25px;
+    }
+
+    #food-title {
+        font-size: 30px
+    }
+
+    .food-image-large {
+        height: 300px;
+    }
 }

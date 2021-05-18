@@ -16,7 +16,7 @@
                              style="background-image: url('/images/foods/{{$food->id}}.jpg')"></div>
 
 
-                        <h1 class="fw-bold text-center text-danger mb-3">{{$food->name}}</h1>
+                        <h1 class="fw-bold text-center text-danger mb-3" id="food-title">{{$food->name}}</h1>
                         <div class="text-center">
                             <span class="fw-bold">
                                 دسته بندی:
