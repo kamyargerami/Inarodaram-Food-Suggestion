@@ -46,7 +46,7 @@ class FoodsController extends Controller
                         $query->orwhereJsonContains('requirements', $requirement);
                     }
                 }
-            })->inRandomOrder()->paginate(20)->onEachSide(0);
+            })->inRandomOrder()->take(20)->get();
         }
 
         return view('home', compact('foods', 'similar_foods'));
