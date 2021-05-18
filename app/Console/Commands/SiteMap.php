@@ -39,7 +39,7 @@ class SiteMap extends Command
      */
     public function handle()
     {
-        SitemapGenerator::create('http://inarodaram.test')->hasCrawled(function (Url $url) {
+        SitemapGenerator::create('https://inarodaram.ir')->hasCrawled(function (Url $url) {
             return $url;
         })->writeToFile('public/sitemap.xml');
     }

@@ -16,4 +16,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'FoodsController@index')->name('home');
 Route::get('view/{food}', 'FoodsController@view')->name('view');
 Route::get('category/{category}', 'FoodsController@category')->name('category');
-Route::get('meal/{mail}', 'FoodsController@meal')->name('meal');
+Route::get('meal/{meal}', 'FoodsController@meal')->name('meal');
