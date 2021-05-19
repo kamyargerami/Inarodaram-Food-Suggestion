@@ -160,6 +160,10 @@ p {
         border-bottom: 1px #d0d0d0 solid;
     }
 
+    #main-nav li.nav-item:last-child {
+        border-bottom: 0;
+    }
+
     #main-nav .dropdown-toggle:after {
         position: absolute;
         left: 0;
