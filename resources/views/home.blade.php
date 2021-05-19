@@ -45,7 +45,7 @@
         @else
             @include('food-list')
 
-            @if(count($similar_foods))
+            @if(isset($similar_foods) and count($similar_foods))
                 <div class="col-12 mb-3">
                     <div class="card">
                         <div class="card-body">
