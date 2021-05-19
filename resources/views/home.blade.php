@@ -31,7 +31,6 @@
     <div class="container">
         @include('search-box')
 
-
         @if(!count($foods) and request('name'))
             <div class="col-12">
                 <div class="card">
@@ -46,7 +45,7 @@
         @else
             @include('food-list')
 
-            @if($similar_foods)
+            @if(count($similar_foods))
                 <div class="col-12 mb-3">
                     <div class="card">
                         <div class="card-body">

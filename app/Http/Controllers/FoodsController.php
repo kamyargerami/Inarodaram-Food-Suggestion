@@ -21,7 +21,10 @@ class FoodsController extends Controller
                 }
             }
 
-            return array_unique($requirements);
+            $requirements_with_count = array_count_values($requirements);
+            arsort($requirements_with_count);
+
+            return array_keys($requirements_with_count);
         });
 
         $foods = Food::where(function ($query) use ($request) {
@@ -36,17 +39,16 @@ class FoodsController extends Controller
         })->inRandomOrder()->paginate(20)->onEachSide(0);
 
         $similar_foods = [];
-        if ($foods->total() < 7) {
-            $similar_foods = Food::where(function ($query) use ($request) {
-                if ($request->name) {
-                    $query->where('name', 'like', "%$request->name%");
-                } elseif ($request->requirements) {
+        if ($foods->total() < 7 and !$request->name) {
+            $similar_foods = Food::where(function ($query) use ($request, $foods) {
+                if ($request->requirements) {
                     foreach ($request->requirements as $index => $requirement) {
                         if ($index > 5) continue;
                         $query->orwhereJsonContains('requirements', $requirement);
                     }
                 }
-            })->inRandomOrder()->take(20)->get();
+            })->whereNotIn('id', $foods->pluck('id')->toArray())
+                ->inRandomOrder()->take(20)->get();
         }
 
         return view('home', compact('foods', 'similar_foods'));
