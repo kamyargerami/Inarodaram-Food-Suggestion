@@ -31,8 +31,8 @@ input {
     background-position: center;
     background-size: cover;
     background-color: $main-color;
-    filter: drop-shadow(0 0 2px #aaaaaa);
-    border: 2px solid #fff;
+    filter: drop-shadow(0 0 1px #aaaaaa);
+    border: 1px solid #fff;
 }
 
 .food-image-large {
@@ -40,7 +40,7 @@ input {
     background-position-y: center;
     background-size: cover;
     background-color: $main-color;
-    filter: drop-shadow(0 0 2px #aaaaaa);
+    filter: drop-shadow(0 0 1px #aaaaaa);
 }
 
 .bg-main {
