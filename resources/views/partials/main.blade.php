@@ -34,7 +34,9 @@
 
 @include('partials.nav')
 
-@yield('content')
+<div id="main-div">
+    @yield('content')
+</div>
 
 <script src="{{mix('/js/app.js')}}"></script>
 @yield('script')
