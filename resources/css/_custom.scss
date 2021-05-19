@@ -33,6 +33,7 @@ input {
     background-color: $main-color;
     filter: drop-shadow(0 0 1px #aaaaaa);
     border: 1px solid #fff;
+    border-radius: 10px;
 }
 
 .food-image-large {
@@ -41,6 +42,7 @@ input {
     background-size: cover;
     background-color: $main-color;
     filter: drop-shadow(0 0 1px #aaaaaa);
+    border-radius: 10px;
 }
 
 .bg-main {
