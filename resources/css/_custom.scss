@@ -31,7 +31,7 @@ input {
     background-position: center;
     background-size: cover;
     background-color: $main-color;
-    filter: drop-shadow(0 0 5px grey);
+    filter: drop-shadow(0 0 2px #aaaaaa);
     border: 3px solid #fff;
 }
 
@@ -40,7 +40,7 @@ input {
     background-position-y: center;
     background-size: cover;
     background-color: $main-color;
-    filter: drop-shadow(0 0 5px grey);
+    filter: drop-shadow(0 0 2px #aaaaaa);
     border: 3px solid #fff;
 }
 
