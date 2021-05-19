@@ -31,6 +31,8 @@ input {
     background-position: center;
     background-size: cover;
     background-color: $main-color;
+    filter: drop-shadow(0 0 5px grey);
+    border: 3px solid #fff;
 }
 
 .food-image-large {
@@ -38,6 +40,8 @@ input {
     background-position-y: center;
     background-size: cover;
     background-color: $main-color;
+    filter: drop-shadow(0 0 5px grey);
+    border: 3px solid #fff;
 }
 
 .bg-main {
@@ -81,6 +85,14 @@ p {
 
 .pagination {
     padding-right: 0;
+}
+
+.card {
+    border-radius: 0.70rem;
+}
+
+.radius-70 {
+    border-radius: 0.70rem;
 }
 
 @media (min-width: 200px) {

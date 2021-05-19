@@ -1,5 +1,5 @@
 <form action="/">
-    <div class="bg-main mb-3 mt-3 p-3 p-sm-4 p-md-5 p-lg-6"
+    <div class="bg-main mb-3 mt-3 p-3 p-sm-4 p-md-5 p-lg-6 radius-70"
          style="background-image: url('{{asset('images/search-background.png')}}');">
         <h2 class="text-center text-light fw-bold mb-3 mb-sm-5" id="search-title">
             بگو تو خونه چی داری تا بهت بگم چی بپزی؟
