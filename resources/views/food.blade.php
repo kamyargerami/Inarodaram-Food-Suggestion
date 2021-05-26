@@ -2,7 +2,7 @@
 
 @section('title','دستور پخت و موارد مورد نیاز ' . $food->name)
 
-@section('description')آموزش و دستور پخت{{$food->name}}به همراه موارد مورد نیاز به صورت کامل و دقیق@endsection
+@section('description')آموزش و دستور پخت {{$food->name}} به همراه موارد مورد نیاز به صورت کامل و دقیق@endsection
 
 @section('keywords',$food->name . ', دستور پخت, مواد مورد نیاز')
 
